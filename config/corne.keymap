@@ -23,6 +23,13 @@
             require-prior-idle-ms = <1>;
             layers = <3>;
         };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <24 27>;
+            timeout-ms = <300>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -38,7 +45,7 @@
             bindings = <
 &kp ESCAPE            &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &mt LEFT_CONTROL TAB  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT             &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+&kp LEFT_SHIFT        &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                                     &kp LGUI  &to 1  &kp SPACE    &kp RET  &to 2  &kp RALT
             >;
 
@@ -53,10 +60,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6          &kp N7          &kp N8        &kp N9           &kp N0  &kp BSPC
-&kp GLOBE  &none   &none   &none     &none   &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none   &none
-&kp LSHFT  &none   &none   &none     &none   &none        &kp CAPS        &none           &none         &none            &none   &none
-                           &kp LGUI  &to 0   &kp SPACE    &kp RET         &to 2           &kp RALT
+&kp ESC    &kp N1     &kp N2  &kp N3     &kp N4    &kp N5          &kp N6          &kp N7          &kp N8        &kp N9           &kp N0  &kp BSPC
+&kp TAB    &kp CAPS   &none   &kp MINUS  &kp PLUS  &kp KP_EQUAL    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none   &none
+&kp LSHFT  &kp GLOBE  &none   &none      &none     &none           &none           &none           &none         &none            &none   &none
+                              &kp LGUI   &to 0     &kp SPACE       &kp RET         &to 2           &kp RALT
             >;
 
             label = "nums";
@@ -83,7 +90,7 @@
             bindings = <
 &kp F1  &kp F2        &kp F3        &kp F4  &kp F5  &kp F6    &kp F7  &kp F8      &kp F9             &kp F10       &kp F11  &kp F12
 &none   &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans    &trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &trans   &trans
-&trans  &trans        &trans        &trans  &trans  &trans    &trans  &kp C_PREV  &kp C_NEXT         &trans        &trans   &trans
+&trans  &trans        &trans        &trans  &trans  &trans    &trans  &kp K_PREV  &kp K_NEXT         &trans        &trans   &trans
                                     &trans  &to 1   &trans    &trans  &to 2       &trans
             >;
 
